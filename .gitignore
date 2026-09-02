@@ -1,15 +1,15 @@
-# Окружение и кэш
+# Environment and cache
 venv/
 __pycache__/
 *.pyc
 .mypy_cache/
 .ruff_cache/
 
-# Локальные данные
+# Local data
 input_docs/
 output_md/
 logs/
 export.py
 
-# Файлы сред
+# Environment files
 .env

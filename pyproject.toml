@@ -10,7 +10,7 @@ select = [
     "UP",
     "B",
     "SIM",
-] # Добавил проверки багов (B) и упрощения кода (SIM)
+] # Added bug checks (B) and code simplification (SIM)
 
 [tool.mypy]
 strict = true

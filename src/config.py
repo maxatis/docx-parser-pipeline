@@ -10,7 +10,7 @@ class PipelineConfig(BaseModel):
     LOG_DIR: Path = BASE_DIR / "logs"
 
     def setup_directories(self) -> None:
-        """Создает необходимые директории, если их нет"""
+        """Creates necessary directories if they do not exist."""
         self.INPUT_DIR.mkdir(parents=True, exist_ok=True)
         self.OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
         self.LOG_DIR.mkdir(parents=True, exist_ok=True)
