@@ -1,0 +1,15 @@
+# Окружение и кэш
+venv/
+__pycache__/
+*.pyc
+.mypy_cache/
+.ruff_cache/
+
+# Локальные данные
+input_docs/
+output_md/
+logs/
+export.py
+
+# Файлы сред
+.env

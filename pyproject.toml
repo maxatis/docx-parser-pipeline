@@ -1,0 +1,22 @@
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "UP",
+    "B",
+    "SIM",
+] # Добавил проверки багов (B) и упрощения кода (SIM)
+
+[tool.mypy]
+strict = true
+ignore_missing_imports = true
+
+[tool.deptry]
+requirements_files = ["requirements.txt"]
+requirements_files_dev = ["requirements-dev.txt"]
+exclude = ["venv", ".venv", "input_docs", "output_md", "logs", "__pycache__"]
