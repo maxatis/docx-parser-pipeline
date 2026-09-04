@@ -20,3 +20,6 @@ ignore_missing_imports = true
 requirements_files = ["requirements.txt"]
 requirements_files_dev = ["requirements-dev.txt"]
 exclude = ["venv", ".venv", "input_docs", "output_md", "logs", "__pycache__"]
+
+[tool.deptry.per_rule_ignores]
+DEP002 = ["pdfplumber"]

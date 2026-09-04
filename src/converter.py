@@ -6,17 +6,14 @@ from markitdown import MarkItDown
 logger = logging.getLogger(__name__)
 
 
-class DocxConverter:
+class DocumentConverter:
     def __init__(self) -> None:
         # Initialize engine
         self._engine = MarkItDown()
 
     def process_file(self, input_path: Path, output_path: Path) -> bool:
-        """
-        Converts a single file catching all possible exceptions.
-        Returns True on success, False on error.
-        """
-        if input_path.suffix.lower() != ".docx":
+        allowed_extensions = {".docx", ".pdf"}
+        if input_path.suffix.lower() not in allowed_extensions:
             logger.warning(f"Skipped file {input_path.name}: invalid extension.")
             return False
 

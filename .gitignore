@@ -13,3 +13,4 @@ export.py
 
 # Environment files
 .env
+.DS_Store

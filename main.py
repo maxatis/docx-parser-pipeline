@@ -2,7 +2,7 @@ import logging
 import sys
 
 from src.config import config
-from src.converter import DocxConverter
+from src.converter import DocumentConverter
 
 
 def setup_logger() -> logging.Logger:
@@ -20,13 +20,13 @@ def main() -> None:
     # 1. Initialize infrastructure
     config.setup_directories()
     logger = setup_logger()
-    logger.info("Starting DOCX to MD conversion pipeline")
+    logger.info("Starting DOCX/PDF to MD conversion pipeline")
 
     # 2. Initialize converter
-    converter = DocxConverter()
+    converter = DocumentConverter()
 
-    # 3. Получение списка файлов (только .docx)
-    files_to_process = list(config.INPUT_DIR.glob("*.docx"))
+    # 3. Gather files to process
+    files_to_process = list(config.INPUT_DIR.glob("*.docx")) + list(config.INPUT_DIR.glob("*.pdf"))
 
     if not files_to_process:
         logger.warning(f"Directory {config.INPUT_DIR} is empty. Exiting.")
